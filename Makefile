@@ -4,5 +4,5 @@ build:
 
 .PHONY: run
 run:
-	docker run -v $(pwd)/output:/root/output --security-opt apparmor=unconfined -it --rm --privileged falco-fuzz bash
+	docker run --security-opt apparmor=unconfined -it --rm --privileged falco-fuzz bash
 

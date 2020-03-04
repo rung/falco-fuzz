@@ -17,8 +17,6 @@ RUN mkdir falco/build && cd falco/build && \
 
 WORKDIR /root
 
-RUN wget https://s3.amazonaws.com/download.draios.com/falco-tests/traces-positive.zip && \
-    unzip traces-positive.zip
-RUN falco -r /usr/local/etc/falco/falco_rules.yaml -e traces-positive/change-thread-namespace.scap
+ADD execve.scap initial/
 
 ADD falco-fuzz.sh .
